@@ -70,3 +70,42 @@ Since a linear combination of normally distributed random variables is again nor
 we have <em>P</em> <em>Z</em> ~ <em>N</em>(<em>0</em>, <em>I<sub>n</sub></em>). This establishes
 the joint distribution of <em>U<sub>1</sub></em>, ..., <em>U<sub>k</sub></em>.
 
+### Application: One-way ANOVA
+
+Suppose we have <em>i</em> = <em>1</em>, ..., <em>m</em> groups and each group has <em>n<sub>i</sub></em> observations.
+Denote by <em>X<sub>ij</sub></em> the <em>j</em>-th observation in the <em>i</em>-th group, and let <em>N</em> = 
+<em>n<sub>1</sub></em> + ... + <em>n<sub>m</sub></em> be the number of observations. We denote by <em>X<sub>i.</sub></em>
+the mean of the observations in the <em>i</em>-th group, and <em>X<sub>..</sub></em> be the aggregate sample mean.
+
+The usual null hypothesis in this situation is that the population means of each group are the same. Let <em>&mu;</em> be the common population mean of each group and <em>&sigma;<sup>2</sup></em> be the population variance. We will normalise the observed random variables by setting
+
+<em>Z<sub>i</sub></em> = (<em>X<sub>i</sub></em> - <em>&mu;</em>) / <em>&sigma;</em>
+
+for each <em>i</em>. The symbols <em>Z<sub>i.</sub></em> and <em>Z<sub>..</sub></em> are defined analogously. The three sums of squares usually computed in one-way ANOVA are 
+
+SS<sub>total</sub>    = &Sigma; (<em>Z<sub>ij</sub></em> - <em>Z<sub>..</sub></em>)<sup><em>2</em></sup>
+
+SS<sub>group</sub>    = &Sigma; (<em>Z<sub>i.</sub></em> - <em>Z<sub>..</sub></em>)<sup><em>2</em></sup>
+
+SS<sub>residual</sub> = SS<sub>total</sub> - SS<sub>group</sub> 
+
+where the first sum is over all possible <em>i</em>, <em>j</em> and ths second sum is over all possible <em>i</em>. We will show the following
+
+### Proposition
+
+SS<sub>group</sub> ~ <em>&chi;<sup>2</sup></em>(<em>m</em> - <em>1</em>), and
+
+SS<sub>residual</sub> ~ <em>&chi;<sup>2</sup></em>(<em>N</em> - <em>m</em>).
+
+#### Proof
+Consider the following decomposition 
+
+<em>I<sub>N</sub></em> = (<em>I<sub>N</sub></em> - <em>H</em>) + (<em>H</em> - <b>1</b><sub><em>N</em></sub>/N) + <b>1</b><sub><em>N</em></sub>/N
+
+where <em>H</em> = diag(<b>1</b><sub><em>n<sub>1</sub></em></sub>/<em>n<sub>1</sub></em>, ..., <b>1</b><sub><em>n<sub>m</sub></em></sub>/<em>n<sub>m</sub></em>). The three summands in the decomposition of <em>I<sub>N</sub></em> are clearly symmetric matrices. It is elementary to verify the following calculations (<b>1</b><sub><em>N</em></sub>/N)<sup><em>2</em></sup> = (<b>1</b><sub><em>N</em></sub>/N), <em>H<sup>2</sup></em> = <em>H</em> and <em>H</em> <b>1</b><sub><em>N</em></sub>/N = <b>1</b><sub><em>N</em></sub>/N. These show that each of the three summands above are idempotent. Idempotent matrices have characteristic equation <em>x</em>(<em>x</em> - <em>1</em>) = 0, so they only have <em>0</em> or <em>1</em> as eigenvalues. Hence the rank of an idempotent matrix is equal to its trace. This allows us to determine the ranks of each summand above easily:
+
+rank(<em>I<sub>N</sub></em> - <em>H</em>) = tr(<em>I<sub>N</sub></em>) - tr(<em>H</em>) = <em>N</em> - <em>m</em>
+
+rank(<em>H</em> - <b>1</b><sub><em>N</em></sub>/N) = tr(<em>H</em>) - tr(<b>1</b><sub><em>N</em></sub>/N) = <em>m</em> - <em>1</em>
+
+rank(<b>1</b><sub><em>N</em></sub>/N) = <em>1</em>
