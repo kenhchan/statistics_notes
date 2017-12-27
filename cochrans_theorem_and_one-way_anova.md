@@ -81,11 +81,11 @@ The usual null hypothesis in this situation is that the population means of each
 
 <em>Z<sub>i</sub></em> = (<em>X<sub>i</sub></em> - <em>&mu;</em>) / <em>&sigma;</em>
 
-for each <em>i</em>. The symbols <em>Z<sub>i.</sub></em> and <em>Z<sub>..</sub></em> are defined analogously. The three sums of squares usually computed in one-way ANOVA are 
+for each <em>i</em>. The symbols <em>Z<sub>i.</sub></em> and <em>Z<sub>..</sub></em> are defined analogously. The three sums of squares usually computed in one-way ANOVA are (up to a factor of <em>&sigma;<sup>2</sup></em>)
 
 SS<sub>total</sub>    = &Sigma; (<em>Z<sub>ij</sub></em> - <em>Z<sub>..</sub></em>)<sup><em>2</em></sup>
 
-SS<sub>group</sub>    = &Sigma; (<em>Z<sub>i.</sub></em> - <em>Z<sub>..</sub></em>)<sup><em>2</em></sup>
+SS<sub>group</sub>    = &Sigma; <em>n<sub>i</sub></em>(<em>Z<sub>i.</sub></em> - <em>Z<sub>..</sub></em>)<sup><em>2</em></sup>
 
 SS<sub>residual</sub> = SS<sub>total</sub> - SS<sub>group</sub> 
 
@@ -109,3 +109,18 @@ rank(<em>I<sub>N</sub></em> - <em>H</em>) = tr(<em>I<sub>N</sub></em>) - tr(<em>
 rank(<em>H</em> - <b>1</b><sub><em>N</em></sub>/N) = tr(<em>H</em>) - tr(<b>1</b><sub><em>N</em></sub>/N) = <em>m</em> - <em>1</em>
 
 rank(<b>1</b><sub><em>N</em></sub>/N) = <em>1</em>
+
+By Cochran's theorem, we have <em>Z</em><sup>T</sup> (<em>H</em> - <b>1</b><sub><em>N</em></sub>/N) Z ~ <em>&chi;<sup>2</sup></em>(<em>m</em> - <em>1</em>) and <em>Z</em><sup>T</sup> (<em>I<sub>N</sub></em> - <em>H</em>) <em>Z</em> ~ <em>&chi;<sup>2</sup></em>(<em>N</em> - <em>m</em>). It remains to show that these are SS<sub>group</sub> and SS<sub>residual</sub> respectively. Observe that
+
+<em>Z</em><sup>T</sup> (<em>H</em> - <b>1</b><sub><em>N</em></sub>/N) Z =
+&Sigma;<sub><em>i</em></sub> <em>n<sub>i</sub></em> (<em>Z<sub>i.</sub></em>)<sup><em>2</em></sup> - <em>N</em> (<em>Z<sub>..</sub></em>)<sup><em>2</em></sup> = 
+&Sigma;<sub><em>i</em></sub> <em>n<sub>i</sub></em> ((<em>Z<sub>i.</sub></em>)<sup><em>2</em></sup> - (<em>Z<sub>..</sub></em>)<sup><em>2</em></sup>) = 
+&Sigma;<sub><em>i</em></sub> <em>n<sub>i</sub></em> ((<em>Z<sub>i.</sub></em>)<sup><em>2</em></sup> - 2<em>Z<sub>i.</sub></em><em>Z<sub>..</sub></em> + (<em>Z<sub>..</sub></em>)<sup><em>2</em></sup>) = 
+&Sigma;<sub><em>i</em></sub> <em>n<sub>i</sub></em> (<em>Z<sub>i.</sub></em> - <em>Z<sub>..</sub></em>)<sup><em>2</em></sup> = 
+SS<sub>group</sub>
+
+We can write <em>I<sub>N</sub></em> - <em>H</em> = (<em>I<sub>N</sub></em> - <b>1</b><sub><em>N</em></sub>/<em>N</em>) - (<em>H</em> - <b>1</b><sub><em>N</em></sub>/<em>N</em>), and similar calculations show that 
+
+<em>Z</em><sup>T</sup> (<em>I<sub>N</sub></em> - <b>1</b><sub><em>N</em></sub>/N) Z = &Sigma;<sub><em>ij</em></sub> (<em>Z<sub>ij</sub></em> - <em>Z<sub>..</sub></em>)<sup><em>2</em></sup>, therefore
+
+<em>Z</em><sup>T</sup> (<em>I<sub>N</sub></em> - <em>H</em>) <em>Z</em> = SS<sub>total</sub> - SS<sub>group</sub> = SS<sub>residual</sub>.
