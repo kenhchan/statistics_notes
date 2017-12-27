@@ -77,7 +77,7 @@ Denote by <em>X<sub>ij</sub></em> the <em>j</em>-th observation in the <em>i</em
 <em>n<sub>1</sub></em> + ... + <em>n<sub>m</sub></em> be the number of observations. We denote by <em>X<sub>i.</sub></em>
 the mean of the observations in the <em>i</em>-th group, and <em>X<sub>..</sub></em> be the aggregate sample mean.
 
-The usual null hypothesis in this situation is that the population means of each group are the same. Let <em>&mu;</em> be the common population mean of each group and <em>&sigma;<sup>2</sup></em> be the population variance. We will normalise the observed random variables by setting
+The usual null hypothesis in this situation is that the population means of each group are the same. Let <em>&mu;</em> be the common population mean of each group and <em>&sigma;<sup>2</sup></em> be the population variance, which is assumed to be the same in all the groups (the homoscedasticity assumption). We will normalise the observed random variables by setting
 
 <em>Z<sub>i</sub></em> = (<em>X<sub>i</sub></em> - <em>&mu;</em>) / <em>&sigma;</em>
 
