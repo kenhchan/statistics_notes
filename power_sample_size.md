@@ -36,3 +36,7 @@ is approximately standard normal, we have
 The measure of this interval under <em>H<sub>1</sub></em> gives the power
 
 Power = <em>1</em> - &Phi;((<em>&mu;<sub>0</sub></em> - <em>&mu;<sub>1</sub></em>)/<em>&tau;<sub>n</sub></em> + &Phi;<sup>-<em>1</em></sup>(<em>1</em> - <em>&alpha;</em>))
+
+In the following plot, the power is the area of the orange region. 
+
+![Rejection Region](https://github.com/kenhchan/statistics_notes/raw/master/rejection_region.png)
